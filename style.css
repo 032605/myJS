@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Noto Sans KR", sans-serif;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  padding: 12px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons li {
+  padding: 4px;
+}
