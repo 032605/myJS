@@ -1,34 +1,51 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Noto Sans KR", sans-serif;
-  color: black;
-}
-
-ul {
-  list-style: none;
+body {
+  margin: 0;
 }
 
 a {
   text-decoration: none;
+  color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0db4f;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 8px 12px;
 }
 
-.logo {
-  align-content: center;
+.logo a {
+  font-size: 24px;
+  color: #323330;
+}
+
+.logo i {
+  font-size: 36px;
 }
 
 .menu {
   display: flex;
+  list-style: none;
+  padding-left: 0px;
 }
 
 .menu li {
   padding: 12px;
 }
 
+.menu li :hover {
+  background-color: #323330;
+  padding: 4px;
+  border-radius: 6px;
+}
+
 .icons {
   display: flex;
+  list-style: none;
 }
 
 .icons li {
   padding: 4px;
+  font-size: 18px;
 }
