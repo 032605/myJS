@@ -1,51 +1,69 @@
 body {
   margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: #323330;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f0db4f;
-  font-family: "Noto Sans KR", sans-serif;
   padding: 8px 12px;
+  background-color: #f0db4f;
 }
 
-.logo a {
+.logo {
   font-size: 24px;
-  color: #323330;
-}
-
-.logo i {
-  font-size: 36px;
 }
 
 .menu {
   display: flex;
+  padding-left: 0;
   list-style: none;
-  padding-left: 0px;
 }
 
 .menu li {
-  padding: 12px;
+  padding: 8px 12px;
 }
 
-.menu li :hover {
-  background-color: #323330;
-  padding: 4px;
-  border-radius: 6px;
+.menu li:hover {
+  background-color: #ddab07;
+  border-radius: 4px;
 }
 
 .icons {
-  display: flex;
   list-style: none;
+  display: flex;
+  font-size: 18px;
+  padding-left: 0px;
 }
 
 .icons li {
-  padding: 4px;
-  font-size: 18px;
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .icons {
+    justify-content: center;
+    width: 100%;
+  }
 }
