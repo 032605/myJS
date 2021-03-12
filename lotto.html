@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또 번호 추첨기</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+
+      .ball {
+        float: left;
+        background-color: rgb(181, 228, 87);
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        font-size: 24px;
+        text-align: center; /*가로 정렬*/
+        line-height: 60px; /*세로 정렬*/
+        color: white;
+        text-shadow: 2px 2px 3px rgb(23, 34, 22);
+        box-shadow: 2px 2px 10px rgb(23, 34, 22);
+        margin-left: 20px;
+      }
+    </style>
 </head>
 <body>
     <h1>로또 번호 추첨기</h1>
     <script>
     var lotto = [];
-    // 6개 배열 숫자 나오기 , 1부터 45까지 숫자, 
+    // 6개 배열 숫자 나오기 , 1부터 45까지 숫자
     for(i = 0; i < 6; i++){
       var num = Math.floor(Math.random() * 45 + 1);
+            // 중복 숫자 제거
       if (lotto.indexOf(num) == -1) {
       lotto.push(num);
         }
@@ -21,7 +40,9 @@
           return a - b;
       });
 
-      document.write(lotto)
-    </script>
+      for(i = 0; i<6; i++){
+      document.write("<div class = 'ball'>" + lotto[i] + "</div>")
+      }
+      </script>
 </body>
 </html>
