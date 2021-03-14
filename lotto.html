@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또 번호 추첨기</title>
-    <link rel="stylesheet" href="style.css">
     <style>
 
 
       .ball {
         float: left;
-        background-color: rgb(181, 228, 87);
         width: 60px;
         height: 60px;
         border-radius: 100%;
@@ -25,18 +23,38 @@
 
       .lotteryBTN {
         display: block;
-        justify-content: center;
         background-color: white;
         color: black;
         border-radius: 10%;
         font-size: 18px;
       }
+
+.ball1 {
+    background: #fbc400;
+}
+.ball2 {
+    background: #69c8f2;
+}
+.ball3 {
+    background: #ff7272;
+}
+.ball4 {
+    background: #aaa;
+}
+.ball5 {
+    background: #b0d840;
+}
+.ball6 {
+    background: #c7c7c7;
+}
+
     </style>
 </head>
 <body>
     <h1>로또 번호 추첨기</h1>
-    <button class="lotteryBTN" onclick="showlotto()"> 추첨</button>
-    <script>
+    <p id="lotto">결과</p>
+    <input type="button" class="lotteyBTN" onclick="showlotto()" value="추첨" />
+   <script>
       function showlotto(){
     var lotto = [];
     // 6개 배열 숫자 나오기 , 1부터 45까지 숫자
@@ -52,10 +70,15 @@
       });
       
 
-      for(i = 0; i<6; i++){
-      document.write("<div class = 'ball'>" + lotto[i] + "</div>")
+      //for(i = 0; i<6; i++){
+        document.getElementById("lotto").innerHTML = "<div class='ball ball1'>" + lotto[0] + "</div>" 
+                                                        + "<div class='ball ball2'>" + lotto[1] + "</div>" 
+                                                        + "<div class='ball ball3'>" + lotto[2] + "</div>" 
+                                                        + "<div class='ball ball4'>" + lotto[3] + "</div>" 
+                                                        + "<div class='ball ball5'>" + lotto[4] + "</div>" 
+                                                        + "<div class='ball ball6'>" + lotto[5] + "</div>"
+       // }document.write("<div class = 'ball'>" + lotto[i] + "</div>")
       }
-    }
       </script>
       
 </body>
