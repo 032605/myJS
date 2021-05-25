@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    #wrapper{
+        max-width: 800px;
+    }
+</style>
+<div id="wrapper">
+        
+    <P>여행 준비물 점검 목록</P>
+    <form>
+        <input type="text" id="item">
+        <button type="button" id="add" class="addBtn">추가</button>
+    </form>
+    <div id="itemList"></div>
+</div>
+<script>
+var arrList = new Array();
+var addBtn = document.querySelector(".addBtn");
+addBtn.addEventListener('click', addList)
+
+function addList(){
+    var item = document.getElementById("item");
+    if(item.value != null){
+        arrList.push(item.value);
+        item.value = "";
+        item.focus();
+    }
+
+    console.log(arrList);
+    showList();
+}
+
+function showList(){
+    var list = "<ul>";
+    for(var i=0; i<arrList.length; i++){
+        list += "<li>" + arrList[i] + "<span class='close' id=" +i+">X</span></li>"
+    }
+        list += "</ul>";
+
+        document.querySelector("#itemList").innerHTML = list;
+
+        var remove = document.querySelectorAll(".close");
+
+        //여기 close 버튼의 활성화시키기 위해선 하나만 하면 안되고 반복문으로 해야함
+        for(var i=0; i<remove.length; i++){
+            remove[i].addEventListener("click", removeList)
+        }
+}
+
+function removeList(){
+    console.log(this);
+
+    //속성은 this로 받아와서 id를 받아옴 id 안받아오면 첫번째 배열이 삭제된다,,
+    var id = this.getAttribute('id');
+    arrList.splice(id,1);
+    showList();
+}
+</script>
+</body>
+</html>
