@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>참가 신청</h1>
+        <form action="">
+            <input type="text" id="name" placeholder="이름" required>
+            <button onclick="fn_add(); return false">신청</button>
+        </form>
+        <hr>
+        <div id="nameList"></div>           
+    </div>
+<script>
+
+
+function fn_add(){
+
+    var newPerson = document.createElement("p");
+    var newName = document.querySelector("#name");
+    var newText = document.createTextNode(newName.value);
+
+    newPerson.appendChild(newText);
+    
+    var delBtn = document.createElement("span");
+    var icon = document.createTextNode("X");
+    delBtn.setAttribute("class", "del");
+    delBtn.append(icon);
+
+    newPerson.appendChild(delBtn);
+
+    var nameList = document.0("#nameList");
+    nameList.insertBefore(newPerson, nameList.childNodes[0]);
+    newName.value="";
+
+    var removeBtn = document.querySelectorAll(".del");
+    
+    for(var i=0; i<removeBtn.length; i++){
+        removeBtn[i].addEventListener("click", function(){
+
+            //현재 노드(span) - 부모 노드 (p) - 부모노드 (div#nodeList)
+            if(this.parentNode.parentNode)
+            this.parentNode.parentNode.removeChild(this.parentNode);
+        })
+    }
+}
+
+</script>
+</body>
+</html>
