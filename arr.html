@@ -61,6 +61,7 @@ function removeList(){
 
     //속성은 this로 받아와서 id를 받아옴 id 안받아오면 첫번째 배열이 삭제된다,,
     var id = this.getAttribute('id');
+    // id부터 1를 삭제한다.
     arrList.splice(id,1);
     showList();
 }
