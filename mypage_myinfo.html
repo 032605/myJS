@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Document</title>
+</head>
+
+<style>
+/* 초기화 */
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+@font-face {
+   font-family: "NEXON Lv1 Gothic OTF";
+   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "NEXON Lv1 Gothic OTF Light";
+   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+body {max-width: 800px; margin:0;padding:0;font-family: Inter, "NEXON Lv1 Gothic OTF" !important; background:#fff;}
+h1, h2, h3, h4, h5, h6 {font-size:17px; font-family: Inter, "NEXON Lv1 Gothic OTF" !important;}
+a {text-decoration: none; color: black;}
+input, button {margin:0;padding:0; font-family: Inter, "NEXON Lv1 Gothic OTF" !important;}
+ul{padding: 0;}
+
+
+textarea, select {font-family: Inter, "NEXON Lv1 Gothic OTF" !important; }
+
+li{list-style-type: none;}
+
+.mypage{
+    width: 100vw; 
+    height: 100vh; 
+    text-align: center; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+.mypage-form {display: flex; justify-content: center; align-items: center; }
+
+.mypage .mypage-form .mypage-tap {width: 200px;}
+.mypage .mypage-form .mypage-tap > hr {width:90%;height:1px;border:none;background-color:#d5d8e6;}
+.mypage .mypage-form .mypage-tap li {margin: 10px; padding: 10px;  text-align: left; background-color: #ffffff; border-radius: 4px; }
+.mypage .mypage-form .mypage-tap li:hover {background-color: #c0c4d7; border-radius: 4px; font-weight: bold; flex: 1;}
+.mypage .mypage-form .mypage-tap li.on {background-color: #c0c4d7; border-radius: 4px; font-weight: bold; flex: 1;}
+
+.mypage .mypage-form .mypage-con-column {  
+    background: #fff;
+    border-radius: 4px; 
+    border-left: 3px solid #1d3a6d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 700px;
+}
+
+.mypage-mod {
+    display: grid;
+    padding: 20px;
+ 
+}
+.mypage-form .mypage-con-column span{text-align: left; font-size: 14px; padding: 10px;}
+.mypage-form .mypage-con-column input{margin: 0 20px; height: 30px; }
+.mypage-form .mypage-con-column input[type="checkbox"]{height: 20px; }
+
+.mypage-form .mypage-con-column #mypage_Email{background:#d3d3d3; border:0px;}
+
+.mypage-form .mypage-con-column .checkDevLangDiv{margin: 0 20px 20px 10px; border: 1px solid #7d7d7d; }
+.mypage-form .mypage-con-column .checkDevLangDiv ul li{float: left; width: 33.33%;} /*3개 한 줄 차지*/
+.mypage-form .mypage-con-column .checkDevLangDiv ul li:nth-child(3n+1) { clear: both; } /*4번째부터 스타일 초기화해서 다음 줄에 배치 */
+
+.mypage-form button{height: 40px; background: #263f73; border: 0px; color: #fff; margin-bottom: 10px; border-radius: 40px;}
+.memberdelete {text-align: right; padding:10px; font-size: 12px; color: #7d7d7d;}
+
+/*
+.mypage-form {max-width: 500px; margin: 20px auto; border: 1px solid #e1e1e1; padding: 20px; background: #fff;  }
+
+*/
+
+
+
+
+</style>
+<body>
+    
+    <div class="mypage">
+        <h2><span style="color: #1d3a6d;">딩코</span>의 마이페이지</h2>
+        <div class="mypage-form">
+            <ul class="mypage-tap">
+                <li class="mypage-tapmenu"><a href="./mypage.html">내 활동</a></li>
+                <li class="mypage-tapmenu on"><a href="./mypage_myinfo.html">정보 수정</a></li>
+                <hr>
+                <li class="mypage-tapmenu"><a href="./mypage_myboard.html">게시글</a></li>
+                <li class="mypage-tapmenu"><a href="./mypage_mycomment.html">답변</a></li>
+            </ul>
+
+            
+            <div class="mypage-con-column">
+                <div class="mypage-mod">
+                    <span>닉네임</span>
+                    <input type="text" name="me_nickName" id="me_nickName" value='죽전동딩코' />
+                    <span>아이디(이메일)</span>
+                    <input type="text" name="me_id" id="mypage_Email" value='032605' readonly onfocus="this.blur()" />
+                    
+                    <span>비밀번호</span>
+                    <input type="password" name="me_pass" id="me_pass" placeholder="비밀번호" />
+                    <span>비밀번호 확인</span>
+                    <input type="password" name="passConfig" id="me_pass2" placeholder="비밀번호 확인" />
+                    
+                    <span>선호 개발 언어</span>
+                    <div class="checkDevLangDiv">
+                        <ul>
+                            <li><label><input type="checkbox" name="me_devLang" value="Java">Java</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="Python">Python</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="JSP">JSP</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="PHP">PHP</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="C">C</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="C++">C++</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="R">R</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="Git">Git</label></li>
+                            <li><label><input type="checkbox" name="me_devLang" value="Etc">기타</label></li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn btn-success" type="button">회원정보 수정</button>
+                    <a href="#" class="memberdelete">회원탈퇴</a>	
+                </div>
+            </div>
+    </div>
+</div>
+
+
+</body>
+</html>

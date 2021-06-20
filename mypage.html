@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Document</title>
+</head>
+
+<style>
+/* 초기화 */
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+@font-face {
+   font-family: "NEXON Lv1 Gothic OTF";
+   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "NEXON Lv1 Gothic OTF Light";
+   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+body {max-width: 800px; margin:0;padding:0;font-family: Inter, "NEXON Lv1 Gothic OTF" !important; background:#fff;}
+h1, h2, h3, h4, h5, h6 {font-size:17px; font-family: Inter, "NEXON Lv1 Gothic OTF" !important;}
+a {text-decoration: none; color: black;}
+input, button {margin:0;padding:0; font-family: Inter, "NEXON Lv1 Gothic OTF" !important;}
+ul{padding: 0;}
+
+
+textarea, select {font-family: Inter, "NEXON Lv1 Gothic OTF" !important; }
+
+li{list-style-type: none;}
+
+.mypage{
+    width: 100vw; 
+    height: 100vh; 
+    text-align: center; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+.mypage-form {display: flex; justify-content: center; align-items: center; }
+
+.mypage .mypage-form .mypage-tap {width: 200px;}
+.mypage .mypage-form .mypage-tap > hr {width:90%;height:1px;border:none;background-color:#d5d8e6;}
+.mypage .mypage-form .mypage-tap li {margin: 10px; padding: 10px;  text-align: left; background-color: #ffffff; border-radius: 4px; }
+.mypage .mypage-form .mypage-tap li:hover {background-color: #c0c4d7; border-radius: 4px; font-weight: bold; flex: 1;}
+.mypage .mypage-form .mypage-tap li.on {background-color: #c0c4d7; border-radius: 4px; font-weight: bold; flex: 1;}
+
+
+
+
+.mypage .mypage-form .mypage-con {  
+    display: flex;
+    background: #fff;
+    border-radius: 4px; 
+    border-left: 3px solid #1d3a6d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    width: 700px;
+}
+
+.left-dash {box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);}
+.mymy{width: 300px; margin: 10px 0;}
+.mymy > li {padding: 10px;}
+
+.right-dash {flex: 2;}
+.right-dash .activity {display: flex; justify-content:center; padding: 20px;}
+
+.right-dash .activity > li {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #1d3a6d;
+    margin: 5px;
+}
+.activity-title {padding: 10px; border-bottom: 2px solid #1d3a6d; font-size: 14px; font-weight: bold;}
+.activity-con {text-align: center; font-size: 40px; color: #1d3a6d; padding-top: 10px;}
+
+
+</style>
+<body>
+    
+    <div class="mypage">
+        <h2><span style="color: #1d3a6d;">딩코</span>의 마이페이지</h2>
+        <div class="mypage-form">
+            <ul class="mypage-tap">
+                <li class="mypage-tapmenu on"><a href="./mypage.html">내 활동</a></li>
+                <li class="mypage-tapmenu"><a href="./mypage_myinfo.html">정보 수정</a></li>
+                <hr>
+                <li class="mypage-tapmenu"><a href="./mypage_myboard.html">게시글</a></li>
+                <li class="mypage-tapmenu"><a href="./mypage_mycomment.html">답변</a></li>
+            </ul>
+
+            <div class="mypage-con">
+                <div class="left-dash">
+                    <ul class="mymy">
+                        <li><img src="https://clubsports.gcu.edu/wp-content/uploads/Coach-Avator.png" alt="" width="100px;"></li>
+                        <li class="mypage_nick"><b>죽전동 딩코</b> Lv.2</li>
+                        <li>Java, Git</li>
+                        <li>2021.06.18 가입</li>
+                    </ul>
+                </div>
+
+                <div class="right-dash">
+                    <ul class="activity">
+                        <li class="myPost">
+                            <div class="activity-title">총 게시물</div>
+                            <div class="activity-con">2</div>
+                        </li>
+                        <li class="myPost">
+                            <div class="activity-title">총 댓글</div>
+                            <div class="activity-con">5</div>    
+                        </li>
+                        <li class="myPost">
+                            <div class="activity-title">총 방문 수</div>
+                            <div class="activity-con">5</div>     
+                        </li>
+                    </ul>
+                    
+                </div>
+
+
+                    
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

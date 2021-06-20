@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+/*
+justify-content - 주축을 기준으로 요소들을 정렬합니다.
+align-items - 교차축을 기준으로 요소들을 정렬합니다.
+
+현재는 주축이 column
+justify-content : 세로 정렬 
+align-items : 가로 정렬
+*/
+.container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+</style>
+<body>
+    <div class="container">
+        <h1 class="title">Title</h1>
+        <p class="content">
+          Lorem, ipsum 
+        </p>
+      </div>
+</body>
+</html>
