@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자소서 글자수 계산기</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/4739a179a2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet"/>
+    
     <style>
         h1 {
             margin-top: 30px;
@@ -14,10 +19,32 @@
         }
     </style>
 </head>
-<body class='container'>
-    <h1>자기소개</h1>
-    <textarea class="form-control" rows="3" id="jasoseol" onkeydown="counter();">자바스크립트 공부하자.</textarea>
-    <span id="count">(0/200)</span>
+<nav class="navbar">
+    <div class="logo">
+        <i class="fab fa-js"></i>
+        <a href="/index.html">my JS</a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/lotto.html">로또 추첨기</a></li>
+        <li><a href="/jasoseo.html">글자수 세기</a></li>
+        <li><a href="/minigame.html">미니 게임</a></li>
+        <li><a href="/dday.html">날짜 계산기</a></li>
+    </ul>
+    <ul class="icons">
+        <li><i class="fab fa-github"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+    </ul>
+    <a href="#" class="toggleBTN"><i class="fas fa-bars"></i></a>
+</nav>
+
+<body>
+    <div>
+        <h1>자기소개</h1>
+        <textarea class="form-control" rows="3" id="jasoseol" onkeydown="counter();">자바스크립트 공부하자.</textarea>
+        <span id="count">(0/200)</span>
+    </div>
+
     <script>
         function counter() {
             var content = document.getElementById('jasoseol').value;
