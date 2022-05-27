@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자소서 글자수 계산기</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <script src="https://kit.fontawesome.com/4739a179a2.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet"/>
     
     <style>
-        h1 {
-            margin-top: 30px;
+
+        .jasoseol_container{
+            text-align: center;
+        }        
+        
+        .form-control {
+            width: 90%;
+            height: 16.25em;
+            border: none;
+            resize: none;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 16px;
         }
+
         #count {
-            float: right;
+            display: block;
+            text-align: end;
+            margin-right: 80px;
         }
+
     </style>
 </head>
 <nav class="navbar">
@@ -39,10 +52,10 @@
 </nav>
 
 <body>
-    <div>
+    <div class="jasoseol_container">
         <h1>자기소개</h1>
         <textarea class="form-control" rows="3" id="jasoseol" onkeydown="counter();">자바스크립트 공부하자.</textarea>
-        <span id="count">(0/200)</span>
+        <div id="count">(0/200)</div>
     </div>
 
     <script>
