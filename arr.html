@@ -17,16 +17,12 @@
         
     <P>여행 준비물 점검 목록</P>
     
-<select name="대양" id="country_main" onchange="fn_change(value)">
-    <option value="">대양 선택</option>
-    <option value="아시아">아시아</option>
-    <option value="아메리카">아메리카</option>
-    <option value="유럽">유럽</option>
-</select>
+    <select name="대양" id="country_main" onchange="fn_change(value)">
+    </select>
 
-<select name="국가" id="country_sub">
-    <option value="">국가 선택</option>
-</select>
+    <select name="국가" id="country_sub">
+        <option value="">==국가 선택==</option>
+    </select>
 
     <form>
         <input type="text" id="item">
@@ -36,21 +32,54 @@
 </div>
 <script>
 
-//select box
-var asia = ["한국", "베트남", "중국", "태국"];
-var america = ["미국", "캐나다", "멕시코", "콜롬비아"];
-var eurpoe = ["영국", "스웨덴", "프랑스", "독일"];
-
-function fn_change(value) {
+    //대양 데이터
+    var arr1 = new Array("==대륙 선택==", "아시아", "아메리카", "유럽");
     
-    console.log(value);
+    //국가 데이터
+    var arr2 = new Array(
+        new Array("국내", "베트남", "중국", "태국"),
+        new Array("미국", "캐나다", "멕시코", "콜롬비아"),
+        new Array("영국", "스웨덴", "프랑스", "독일"),
+    );
 
-    if(value == "아시아"){
-        console.log("ge")
+    var continent = document.querySelector('#country_main');
+    var country = document.querySelector('#country_sub');
+
+window.onload = function(){
+
+    for(i=0; i<arr1.length; i++){
+        continent.options[i] = new Option(arr1[i]);
     }
+
 }
 
+function fn_change(value) {
+    var flag;
 
+    switch (value) {
+        case "아시아": 
+            flag = 0; 
+            break;   
+        case "아메리카": 
+            flag = 1;
+            break;
+        case "유럽": 
+            flag = 2;
+            break;
+        default:
+            flag = 0;
+            break;
+    }
+
+    console.log(flag);
+
+    for(i=0; i<arr1.length; i++){
+        for(j=0; j<arr2[flag].length; j++){
+            country.options[j] = new Option(arr2[flag][j]);
+        }
+    }
+
+}
 
 //list
 var arrList = new Array();
