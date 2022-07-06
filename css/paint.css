@@ -1,0 +1,72 @@
+@import "reset.css";
+body{
+	background-color: azure;
+	font-family: "Noto Sans KR", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 0;
+}
+
+.canvas{
+	background-color: white;
+	width: 700px;
+	height: 700px;
+	box-shadow: 1px 1px 10px rgb(229, 229, 253);
+	border-radius: 15px;
+}
+
+.controls {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.controls .controls_btns {
+	margin-bottom: 30px;
+}
+
+.controls_btns button {
+	all :unset;
+	cursor: pointer;
+	background-color: white;
+	padding: 5px 10px;
+	box-shadow: 1px 1px 5px rgb(226, 226, 226);
+	width: 70px;
+	text-align: center;
+	border-radius: 5px;
+	border:1px solid rgb(226, 226, 226);
+	color: rgb(46, 46, 46);
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.controls_btns button:active {
+	transform: scale(0.98);
+}
+
+.controls .controls_colors {
+	list-style: none;	
+	display: flex;
+}
+
+.controls_colors li {
+	background-color: black;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 1px 1px 10px rgb(226, 226, 226);
+	margin: 2px;
+}	
+
+.controls_colors li:active {
+	transform: scale(0.95);
+}
+
+
+.controls .controls_range {
+	margin-bottom: 30px;
+}
