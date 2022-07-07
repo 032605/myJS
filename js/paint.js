@@ -2,19 +2,28 @@ const canvas = document.getElementById("jsCanvas");
 const range = document.getElementById("jsRange");
 const colors = document.getElementsByClassName("jsColor"); 
 const modeBtn = document.getElementById("jsMode");
+const save = document.getElementById("jsSave");
+
+const INITIAL_COLOR = "#2c2c2c";
+const CANVAS_SIZE = 700;
 
 let drawYn=false;
 let filling=false;
 
 const ctx = canvas.getContext("2d"); // 2d모드의 그리기 객체
-canvas.width = 700;	//실제 컨버스 사이즈 세팅
-canvas.height = 700;
+canvas.width = CANVAS_SIZE;	//실제 컨버스 사이즈 세팅
+canvas.height = CANVAS_SIZE;
 
-ctx.strokeStyle  = "#2c2c2c";
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.strokeStyle  = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
+ctx.fillStyle = INITIAL_COLOR;
 
 function mousedown(event){
-	drawYn = true;	
+	if(!filling){
+		drawYn = true;	
+	} 
 };
 
 //마우스 움직일 때 계속 발생 (begining point / end point 개념 X)
@@ -45,20 +54,40 @@ function changeRange(event){
 
 // 브러쉬 색상 변환
 function changeColor(event){
-	const color = event.target.style.backgroundColor;
+	color = event.target.style.backgroundColor;
 	ctx.strokeStyle  = color;
+	ctx.fillStyle = color;
 }
 
 function onClickFillBtn(event){
 	if(filling === true){
 		filling = false;
 		modeBtn.innerText = "Fill";
+		
 	} else{
 		filling = true;
 		modeBtn.innerText = "Paint";
-
-		canvas.style.backgroundColor = 'green';
 	}
+}
+
+function onClickCanvas(event){
+	if(filling){
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+	}
+}
+
+function onClickSaveBtn(event){
+	const dataURL = canvas.toDataURL();
+	const link = document.createElement("a");
+	link.download = 'yourPainting🎨.png';
+	link.href = dataURL;
+	link.click();
+	console.log(link);
+}
+
+function handleContextMenu(event) {
+	console.log(event);
+	event.preventDefault();
 }
 
 if(canvas){
@@ -66,6 +95,8 @@ if(canvas){
 	canvas.addEventListener('mousemove', mousemove);	//움직
 	canvas.addEventListener('mouseup', stopPainting);
 	canvas.addEventListener('mouseleave', stopPainting);
+	canvas.addEventListener('click', onClickCanvas);
+	canvas.addEventListener('contextmenu', handleContextMenu);
 }
 
 if(range){
@@ -77,4 +108,8 @@ Array.from(colors).forEach(color => { color.addEventListener('click', changeColo
 
 if(modeBtn){
 	modeBtn.addEventListener('click', onClickFillBtn);
+}
+
+if(save){
+	save.addEventListener('click', onClickSaveBtn);
 }
