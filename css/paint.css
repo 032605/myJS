@@ -27,6 +27,21 @@ body{
 	margin-bottom: 30px;
 }
 
+.controls .controls_range {
+	margin-bottom: 30px;
+}
+
+.controls span {
+	font-weight: 600;
+	font-size: 14px;
+	vertical-align: middle;
+	background-color: white;
+	padding: 0 5px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 5px rgb(226, 226, 226);
+	cursor: pointer;
+}
+
 .controls_btns button {
 	all :unset;
 	cursor: pointer;
@@ -47,9 +62,9 @@ body{
 	transform: scale(0.98);
 }
 
-.controls .controls_colors {
-	list-style: none;	
+.controls_colors {
 	display: flex;
+	list-style: none;	
 }
 
 .controls_colors li {
@@ -67,6 +82,3 @@ body{
 }
 
 
-.controls .controls_range {
-	margin-bottom: 30px;
-}

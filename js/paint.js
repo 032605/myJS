@@ -3,10 +3,11 @@ const range = document.getElementById("jsRange");
 const colors = document.getElementsByClassName("jsColor"); 
 const modeBtn = document.getElementById("jsMode");
 const save = document.getElementById("jsSave");
+const rangeM = document.getElementById("jsRangeM");
+const rangeP = document.getElementById("jsRangeP");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
-
 let drawYn=false;
 let filling=false;
 
@@ -50,6 +51,16 @@ function stopPainting(){
 function changeRange(event){
 	console.log(event.target.value);
 	ctx.lineWidth = range.value;
+};
+
+function changeRangeM(event){
+	ctx.lineWidth = ctx.lineWidth - 0.5;
+	range.value = ctx.lineWidth; 
+};
+
+function changeRangeP(event){
+	ctx.lineWidth = ctx.lineWidth + 0.5;
+	range.value = ctx.lineWidth;
 };
 
 // 브러쉬 색상 변환
@@ -112,4 +123,12 @@ if(modeBtn){
 
 if(save){
 	save.addEventListener('click', onClickSaveBtn);
+}
+
+if(rangeM){
+	rangeM.addEventListener('click', changeRangeM);
+}
+
+if(rangeP){
+	rangeP.addEventListener('click', changeRangeP);
 }
